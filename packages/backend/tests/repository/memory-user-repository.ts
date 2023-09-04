@@ -14,6 +14,12 @@ class MemoryUserRepository implements IUserRepository {
 
     return user;
   }
+
+  async findEmail(email: string): Promise<User> {
+    const user = this.users.find((user) => user.getEmail === email);
+
+    return user;
+  }
 }
 
 export { MemoryUserRepository };
